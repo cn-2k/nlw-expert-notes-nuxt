@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   future: {
+    // https://github.com/nuxt-modules/eslint/issues/123
     typescriptBundlerResolution: false,
   },
   app: {
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/eslint-module",
+    "shadcn-nuxt",
   ],
 
   eslint: { lintOnStart: false },
@@ -24,4 +26,17 @@ export default defineNuxtConfig({
       Inter: [100, 300, 400, 500, 600, 700],
     },
   },
+
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: "sc-",
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: "./components/ui",
+  },
+  ssr: false,
 });

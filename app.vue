@@ -11,11 +11,19 @@
 
     <div class="h-px bg-slate-700"></div>
 
-    <div class="grid auto-rows-[250px] grid-cols-3 gap-6">
+    <div
+      class="grid auto-rows-[250px] grid-cols-1 gap-6 p-6 lg:grid-cols-3 lg:p-0"
+    >
       <NewNoteCard />
-      <NoteCard />
-      <NoteCard />
-      <NoteCard />
+      <NoteCard :note="note" />
+      <NoteCard :note="note" />
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const note = {
+  date: new Date(),
+  content: "Hello World",
+};
+</script>
