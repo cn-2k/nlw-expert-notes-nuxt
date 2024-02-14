@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto my-12 max-w-6xl space-y-6">
+  <div class="mx-auto my-12 max-w-6xl space-y-6 px-6 lg:p-0">
     <img src="~/assets/logo-nlw-expert.svg" alt="NLW Expert" />
     <form class="w-full">
       <input
@@ -11,17 +11,18 @@
 
     <div class="h-px bg-slate-700"></div>
 
-    <div
-      class="grid auto-rows-[250px] grid-cols-1 gap-6 p-6 lg:grid-cols-3 lg:p-0"
-    >
+    <div class="grid auto-rows-[250px] grid-cols-1 gap-6 lg:grid-cols-3">
       <NewNoteCard />
       <NoteCard :note="note" />
       <NoteCard :note="note" />
     </div>
   </div>
+  <Toaster rich-colors />
 </template>
 
 <script setup lang="ts">
+import { Toaster } from "vue-sonner";
+
 const note = {
   date: new Date(),
   content: "Hello World",

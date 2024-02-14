@@ -14,7 +14,7 @@
       />
     </ScDialogTrigger>
     <ScDialogContent
-      class="flex h-[60vh] w-full max-w-[640px] flex-col rounded-md bg-slate-700 outline-none"
+      class="flex h-[60vh] w-full max-w-[640px] flex-col overflow-hidden rounded-md border-transparent bg-slate-700 p-0 outline-none"
     >
       <ScDialogHeader class="p-5">
         <ScDialogTitle>
@@ -40,9 +40,8 @@
         >
           Deseja
           <span class="text-red-400 group-hover:underline">
-            apagar essa nota
+            apagar essa nota?
           </span>
-          ?
         </button>
       </ScDialogFooter>
     </ScDialogContent>
