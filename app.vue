@@ -1,12 +1,14 @@
 <template>
-  <div class="mx-auto my-12 max-w-6xl space-y-6 px-6 lg:px-0">
+  <div
+    class="mx-auto my-6 max-w-6xl space-y-4 px-6 lg:my-12 lg:space-y-6 lg:px-0"
+  >
     <img src="~/assets/logo-nlw-expert.svg" alt="NLW Expert" />
     <form class="w-full">
       <input
         v-model="search"
         type="text"
         placeholder="Busque em suas notas..."
-        class="w-full bg-transparent text-3xl font-semibold tracking-tight outline-none placeholder:text-slate-500"
+        class="w-full bg-transparent text-xl font-semibold tracking-tight outline-none placeholder:text-slate-500 lg:text-3xl"
       />
     </form>
 
@@ -14,7 +16,7 @@
 
     <div
       v-auto-animate
-      class="grid h-[700px] auto-rows-[250px] grid-cols-1 gap-6 overflow-y-auto overflow-x-hidden py-4 pl-2 pr-3 scrollbar scrollbar-track-transparent scrollbar-thumb-slate-300/20 lg:grid-cols-3"
+      class="grid h-[75vh] auto-rows-[250px] grid-cols-1 gap-6 overflow-y-auto overflow-x-hidden py-4 pl-2 pr-3 scrollbar scrollbar-track-transparent scrollbar-thumb-slate-300/20 lg:h-[700px] lg:grid-cols-3"
     >
       <NewNoteCard @on-note-created="onNoteCreated" />
       <NoteCard

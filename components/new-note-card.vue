@@ -9,7 +9,7 @@
       </p>
     </ScDialogTrigger>
     <ScDialogContent
-      class="flex h-[60vh] w-full max-w-[640px] flex-col overflow-hidden rounded-md border-transparent bg-slate-700 p-0 outline-none"
+      class="flex h-[60vh] min-h-[400px] w-full max-w-[640px] flex-col overflow-hidden rounded-md border-transparent bg-slate-700 p-0 outline-none"
       @close-auto-focus="handleClose"
       @interact-outside="(e) => e.preventDefault()"
     >
@@ -52,18 +52,13 @@
             v-if="!shouldShowOnboarding"
             v-model="content"
             v-focus
-            class="scrollbar-thumb-rounded-full h-[400px] w-full resize-none bg-transparent pr-2 text-sm leading-6 text-slate-400 outline-none scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-300/20"
+            class="w-full flex-1 resize-none bg-transparent pr-2 text-sm leading-6 text-slate-400 outline-none scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-300/20"
             placeholder="Comece a escrever sua nota..."
             @input="handleContentChanged"
           />
-
-          <!-- <textarea
-            v-model="content"
-            class="focus:border-brand-500 focus:ring-brand-500 min-h-[112px] w-full min-w-[304px] resize-none rounded-md border border-zinc-600 bg-transparent text-sm text-zinc-100 placeholder-zinc-400 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-700 focus:outline-none focus:ring-1"
-            placeholder="Conte com detalhes o que está acontecendo..."
-          /> -->
         </div>
-
+      </div>
+      <ScDialogFooter class="w-full">
         <button
           v-if="isRecording"
           type="button"
@@ -83,7 +78,7 @@
         >
           Salvar nota
         </button>
-      </div>
+      </ScDialogFooter>
     </ScDialogContent>
   </ScDialog>
 </template>
