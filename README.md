@@ -68,7 +68,7 @@ $ cd nlw-expert-notes-nuxt
 
 ```bash
 # instalar dependências
-$ npm run install
+$ npm install
 # iniciar servidor
 $ npm run dev
 ```

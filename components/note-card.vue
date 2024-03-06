@@ -12,9 +12,10 @@
         }}
       </span>
 
-      <p class="break-all text-sm leading-6 text-slate-400">
-        {{ props.note.content }}
-      </p>
+      <p
+        class="break-all text-sm leading-6 text-slate-400"
+        v-html="contentNoteMd"
+      />
 
       <div
         class="pointer-events-none absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 to-black/0"
@@ -39,9 +40,8 @@
         >
           <p
             class="break-all pr-2 text-justify text-sm leading-6 text-slate-400"
-          >
-            {{ props.note.content }}
-          </p>
+            v-html="contentNoteMd"
+          />
         </ScDialogDescription>
       </ScDialogHeader>
       <ScDialogFooter class="absolute bottom-0 w-full">
@@ -77,4 +77,10 @@ const props = defineProps<NoteCardProps>();
 const emit = defineEmits<{
   onNoteDeleted: [id: string];
 }>();
+
+const { render } = useMarkdown();
+
+const contentNoteMd = computed(() => {
+  return render(props.note.content);
+});
 </script>
